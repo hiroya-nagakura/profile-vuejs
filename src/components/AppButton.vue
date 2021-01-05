@@ -1,0 +1,32 @@
+<template>
+  <v-col>
+    <v-btn
+      large
+      color='error'
+      min-width='300'
+      :to='url'
+    >
+      >> {{buttonText}}
+    </v-btn>
+  </v-col>
+</template>
+
+<script>
+export default {
+  props: {
+    buttonText: {
+      type: String,
+      required: true
+    },
+    url: {
+      type: String,
+      required: true
+    }
+  }
+}
+</script>
+<style lang="scss" scoped>
+  .button {
+    text-align: center;
+  }
+</style>
