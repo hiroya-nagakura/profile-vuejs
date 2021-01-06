@@ -30,7 +30,7 @@ export default {
 
 <style lang="scss" scoped>
   .fadeIn {
-  animation: fadeIn 5s;
+  animation: fadeIn 2s;
   }
   @keyframes fadeIn {
     0% {
