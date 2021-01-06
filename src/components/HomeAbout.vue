@@ -1,25 +1,28 @@
 <template>
-  <section class="home-about">
-    <div class="section__title">
-      <div class="section__title-text">01. About Me</div>
-    </div>
-    <v-container>
-      <v-row class="home-about__contents">
-        <v-col md="5" class="home-about__contents-img">
-          <img src="../assets/img/profile.jpg" alt="" class="img-fluid">
-        </v-col>
-        <v-col md="5" class="home-about__contents-text">
-          <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
-          <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
-        </v-col>
-      </v-row>
-      <AppButton :button-text="buttonText" :url='url' />
-    </v-container>
-  </section>
+  <fade-in-component>
+    <section class="home-about">
+      <div class="section__title">
+        <div class="section__title-text">01. About Me</div>
+      </div>
+      <v-container>
+        <v-row class="home-about__contents">
+          <v-col md="5" class="home-about__contents-img">
+            <img src="../assets/img/profile.jpg" alt="" class="img-fluid">
+          </v-col>
+          <v-col md="5" class="home-about__contents-text">
+            <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+            <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+          </v-col>
+        </v-row>
+        <AppButton :button-text="buttonText" :url='url' />
+      </v-container>
+    </section>
+  </fade-in-component>
 </template>
 
 <script>
 import AppButton from './AppButton.vue'
+import FadeInComponent from './FadeInComponent.vue'
 
 export default {
   data() {
@@ -29,7 +32,8 @@ export default {
     }
   },
   components: {
-    AppButton
+    AppButton,
+    FadeInComponent
   }
 }
 </script>
