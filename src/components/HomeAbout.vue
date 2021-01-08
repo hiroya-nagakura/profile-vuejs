@@ -1,5 +1,4 @@
 <template>
-  <fade-in-component>
     <section class="home-about">
       <div class="section__title">
         <div class="section__title-text">01. About Me</div>
@@ -17,12 +16,10 @@
         <AppButton :button-text="buttonText" :url='url' />
       </v-container>
     </section>
-  </fade-in-component>
 </template>
 
 <script>
 import AppButton from './AppButton.vue'
-import FadeInComponent from './FadeInComponent.vue'
 
 export default {
   data() {
@@ -32,8 +29,7 @@ export default {
     }
   },
   components: {
-    AppButton,
-    FadeInComponent
+    AppButton
   }
 }
 </script>
