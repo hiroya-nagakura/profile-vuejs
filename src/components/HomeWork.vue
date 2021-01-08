@@ -34,7 +34,11 @@ export default {
   },
   mounted() {
       ScrollReveal().reveal('.fade-in', {
-  viewFactor: 0.5,});
+        duration: 800,
+        viewFactor: 0.5,
+        origin: 'bottom',
+        distance: '50px',
+      });
   }
 }
 </script>
