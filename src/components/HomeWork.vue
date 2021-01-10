@@ -1,44 +1,64 @@
 <template>
   <section class="home-about">
-    <div class="section__title fade-in">
-      <div class="section__title-text">02. Work</div>
-    </div>
-    <v-container class='fade-in'>
-      <v-row class="home-about__contents">
-        <v-col md="5" class="home-about__contents-img">
-          <img src="../assets/img/profile.jpg" alt="" class="img-fluid">
-        </v-col>
-        <v-col md="5" class="home-about__contents-text">
-          <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
-          <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+    <div class="section__title">
+        <div class="section__title-text">Work</div>
+      </div>
+    <v-container>
+      <v-row>
+        <v-col
+          v-for="(portfolio, index) in portfolios"
+          :key = index
+        >
+          <v-card
+            class="mx-auto my-12"
+            max-width="374"
+          >
+            <v-img
+              height="250"
+              :src="portfolio.img"
+            ></v-img>
+            <v-card-title>{{ portfolio.title }}</v-card-title>
+            <v-card-text>
+              <v-row
+                align="center"
+                class="mx-0"
+              >
+              </v-row>
+              <div class="my-4 subtitle-1">
+                使用技術： {{ portfolio.technology }}
+              </div>
+              <div>{{ portfolio.body }}</div>
+            </v-card-text>
+            <v-divider class="mx-4"></v-divider>
+            <v-card-title>Tonight's availability</v-card-title>
+            <v-card-actions>
+            </v-card-actions>
+          </v-card>
         </v-col>
       </v-row>
-      <AppButton :button-text="buttonText" :url='url' />
     </v-container>
   </section>
 </template>
 
 <script>
-import AppButton from './AppButton.vue'
-import ScrollReveal from 'scrollreveal'
-
 export default {
   data() {
     return {
-      buttonText: '詳しく見る',
-      url: '/about'
+      portfolios: [
+        {
+          title: 'FitMenu',
+          img: require('../assets/img/FitMenu_logo.png'),
+          technology: 'Ruby, Rails, AWS',
+          body: '自分のお気に入りの筋トレメニューをシェアできるサイトです。体重や自身の行った筋トレメニューを記録する機能もあります。インフラにはAWSを利用しCircleCIによるCI/CDパイプラインを構築しています。'
+        },
+        {
+          title: 'Profile',
+          img: require('../assets/img/profile.jpg'),
+          technology: 'Vue, Vuetify',
+          body: '現在閲覧されている本サイトです。バックエンドの言語だけでなく、フロントエンドの技術も学ぼうとVue学習の第一歩に作成しました。'
+        }
+      ]
     }
-  },
-  components: {
-    AppButton
-  },
-  mounted() {
-      ScrollReveal().reveal('.fade-in', {
-        duration: 800,
-        viewFactor: 0.5,
-        origin: 'bottom',
-        distance: '50px',
-      });
   }
 }
 </script>
