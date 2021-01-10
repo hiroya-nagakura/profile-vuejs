@@ -11,10 +11,11 @@
         >
           <v-card
             class="mx-auto my-12"
-            max-width="374"
+            max-width="380"
           >
             <v-img
-              height="250"
+              contain
+              height="260"
               :src="portfolio.img"
             ></v-img>
             <v-card-title>{{ portfolio.title }}</v-card-title>
