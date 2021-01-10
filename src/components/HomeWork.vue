@@ -30,8 +30,25 @@
               <div>{{ portfolio.body }}</div>
             </v-card-text>
             <v-divider class="mx-4"></v-divider>
-            <v-card-title>Tonight's availability</v-card-title>
             <v-card-actions>
+                <v-btn 
+                  color="primary"
+                  v-if=portfolio.siteUrl
+                  :href='portfolio.siteUrl'
+                  icon
+                  x-large
+                >
+                  <v-icon>mdi-home</v-icon>
+                </v-btn>
+                <v-btn 
+                  color="primary"
+                  v-if=portfolio.githubUrl
+                  :href='portfolio.githubUrl'
+                  icon
+                  x-large
+                >
+                  <v-icon>mdi-github</v-icon>
+                </v-btn>
             </v-card-actions>
           </v-card>
         </v-col>
@@ -49,13 +66,16 @@ export default {
           title: 'FitMenu',
           img: require('../assets/img/FitMenu_logo.png'),
           technology: 'Ruby, Rails, AWS',
-          body: '自分のお気に入りの筋トレメニューをシェアできるサイトです。体重や自身の行った筋トレメニューを記録する機能もあります。インフラにはAWSを利用しCircleCIによるCI/CDパイプラインを構築しています。'
+          body: '自分のお気に入りの筋トレメニューをシェアできるサイトです。体重や自身の行った筋トレメニューを記録する機能もあります。インフラにはAWSを利用しCircleCIによるCI/CDパイプラインを構築しています。',
+          siteUrl: 'https://fitmenu.work/',
+          githubUrl: 'https://github.com/hiroya-nagakura/muscle-app'
         },
         {
           title: 'Profile',
           img: require('../assets/img/profile.jpg'),
           technology: 'Vue, Vuetify',
-          body: '現在閲覧されている本サイトです。バックエンドの言語だけでなく、フロントエンドの技術も学ぼうとVue学習の第一歩に作成しました。'
+          body: '現在閲覧されている本サイトです。バックエンドの言語だけでなく、フロントエンドの技術も学ぼうとVue学習の第一歩に作成しました。',
+          githubUrl: 'https://github.com/hiroya-nagakura/profile-vuejs'
         }
       ]
     }
