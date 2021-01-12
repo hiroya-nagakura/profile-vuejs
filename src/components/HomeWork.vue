@@ -1,8 +1,8 @@
 <template>
   <section class="home-about">
     <div class="section__title">
-        <div class="section__title-text">Work</div>
-      </div>
+      <div class="section__title-text">Work</div>
+    </div>
     <v-container>
       <v-row>
         <v-col
@@ -32,24 +32,24 @@
             </v-card-text>
             <v-divider class="mx-4"></v-divider>
             <v-card-actions>
-                <v-btn 
-                  color="primary"
-                  v-if=portfolio.siteUrl
-                  :href='portfolio.siteUrl'
-                  icon
-                  x-large
-                >
-                  <v-icon>mdi-home</v-icon>
-                </v-btn>
-                <v-btn 
-                  color="primary"
-                  v-if=portfolio.githubUrl
-                  :href='portfolio.githubUrl'
-                  icon
-                  x-large
-                >
-                  <v-icon>mdi-github</v-icon>
-                </v-btn>
+              <v-btn 
+                color="primary"
+                v-if=portfolio.siteUrl
+                :href='portfolio.siteUrl'
+                icon
+                x-large
+              >
+                <v-icon>mdi-home</v-icon>
+              </v-btn>
+              <v-btn 
+                color="primary"
+                v-if=portfolio.githubUrl
+                :href='portfolio.githubUrl'
+                icon
+                x-large
+              >
+                <v-icon>mdi-github</v-icon>
+              </v-btn>
             </v-card-actions>
           </v-card>
         </v-col>
