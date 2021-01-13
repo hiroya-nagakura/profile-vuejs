@@ -4,6 +4,7 @@
     <HomeAbout/>
     <HomeWork/>
     <HomeSkill/>
+    <HomeContact/>
   </section>
 </template>
 
@@ -12,6 +13,7 @@ import HomeHero from './HomeHero.vue'
 import HomeAbout from './HomeAbout.vue'
 import HomeWork from './HomeWork.vue'
 import HomeSkill from './HomeSkill.vue'
+import HomeContact from './HomeContact.vue'
 import ScrollReveal from 'scrollreveal'
 
 export default {
@@ -19,7 +21,8 @@ export default {
     HomeHero,
     HomeAbout,
     HomeWork,
-    HomeSkill
+    HomeSkill,
+    HomeContact
   },
   mounted() {
     ScrollReveal().reveal('.fade-in', {
