@@ -5,15 +5,12 @@
       dark
     >
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
-      <v-toolbar-title>
-        MyPortfoioSite
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
       <v-item-group
-        class='header-link'
+        class='header-link mx-auto'
       >
         <v-btn
           depressed
+          x-large
           v-for='(menuItem, index) in menuItems'
           :key='index'
           @click="$vuetify.goTo(menuItem.url)"

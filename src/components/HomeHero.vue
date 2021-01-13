@@ -7,8 +7,8 @@
     >
       <v-row>
         <v-col class='home-hero__content-text'>
-          <p>Welcome to my website.</p>
-          <p>I'm a enginner.</p>
+          <h1>Hiroya Nagakura's portfolio.</h1>
+          <p>I wanna be an engineer</p>
         </v-col>
       </v-row>
     </v-container>
@@ -17,21 +17,27 @@
 
 <style lang="scss" scoped>
   .home-hero__content {
-    background: url("../assets/img/home-hero.jpg");
+    background: url("../assets/img/Top.jpg");
     background-size: cover;
     background-position: center center;
     width: 100%;
     height: 50vh;
     @include display_pc {
-      height: 100vh;
+      height: 80vh;
     }
     &-text {
-      color: black;
+      color: white;
       text-align: center;
       font-size: 28px;
       font-weight: bold;
+      font-family: 'Impact';
       @include display_pc {
-        font-size: 40px;
+        h1{
+          font-size: 100px;
+        }
+        p{
+          font-size: 50px
+        }
       }
     }
   }
