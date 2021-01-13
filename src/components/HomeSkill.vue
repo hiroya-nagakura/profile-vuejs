@@ -8,12 +8,19 @@
         <v-col
           cols='12'
           md='6' sm='10'
-          class='title mx-auto'
+          class='mx-auto'
         >
-          <v-card
-            class="mx-auto"
-            tile
-          >
+          <v-card>
+            <v-list>
+              <v-list-item>
+                <v-list-item-title
+                  class='ml-5 text-h5 font-weight-black'
+                >Skill</v-list-item-title>
+                <v-list-item-title
+                  class='text-right mr-5 text-h5 font-weight-black'
+                >Learning level</v-list-item-title>
+              </v-list-item>
+            </v-list>
             <v-list
               v-for="(skill, index) in skills"
               :key="index"
@@ -24,6 +31,7 @@
                 v-text="skill.icon"></v-icon>
                 <v-list-item-title
                   v-text="skill.name"
+                  class='font-weight-medium ml-3'
                 ></v-list-item-title>
                 <v-list-item-subtitle
                   class='text-right'
