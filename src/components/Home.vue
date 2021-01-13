@@ -1,10 +1,10 @@
 <template>
   <section class="home">
-    <HomeHero/>
-    <HomeAbout/>
-    <HomeWork/>
-    <HomeSkill/>
-    <HomeContact/>
+    <HomeHero id='home'/>
+    <HomeAbout id='about'/>
+    <HomeWork id='work'/>
+    <HomeSkill id='skill'/>
+    <HomeContact id='contact'/>
   </section>
 </template>
 

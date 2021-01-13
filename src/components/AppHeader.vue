@@ -8,13 +8,13 @@
       <v-toolbar-title>
         MyPortfoioSite
       </v-toolbar-title>
-      <v-tab
+      <v-btn
         v-for='(menuItem, index) in menuItems'
         :key='index'
-        :to='menuItem.url'
+        :href='menuItem.url'
       >
         {{menuItem.name}}
-      </v-tab>
+      </v-btn>
     </v-app-bar>
     <v-navigation-drawer
       v-model='drawer'
@@ -29,7 +29,7 @@
           <v-list-item
             v-for='(menuItem, index) in menuItems'
             :key='index'
-            :to='menuItem.url'
+            :href='menuItem.url'
           >
             <v-list-item-title>{{menuItem.name}}</v-list-item-title>
           </v-list-item>
