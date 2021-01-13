@@ -8,13 +8,19 @@
       <v-toolbar-title>
         MyPortfoioSite
       </v-toolbar-title>
-      <v-btn
-        v-for='(menuItem, index) in menuItems'
-        :key='index'
-        :href='menuItem.url'
+      <v-spacer></v-spacer>
+      <v-item-group
+        class='header-link'
       >
-        {{menuItem.name}}
-      </v-btn>
+        <v-btn
+          depressed
+          v-for='(menuItem, index) in menuItems'
+          :key='index'
+          @click="$vuetify.goTo(menuItem.url)"
+        >
+          {{menuItem.name}}
+        </v-btn>
+      </v-item-group>
     </v-app-bar>
     <v-navigation-drawer
       v-model='drawer'
@@ -63,7 +69,7 @@ export default {
       display: none !important;
     }
   }
-  .v-tab {
+  .header-link {
   display: none;
     @include display_pc {
       display: block !important;
