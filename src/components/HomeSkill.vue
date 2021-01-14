@@ -1,14 +1,9 @@
 <template>
   <div>
-    <div class="section__title">
-      <div class="section__title-text">
-        <v-icon 
-          large
-          class='section__title-icon'
-        >{{ icon }}</v-icon>
-        Skills
-        </div>
-    </div>
+    <TitleComponent
+      :icon='icon'
+      :title='title'
+    />
     <v-container
       class='fade-in'
     >
@@ -66,6 +61,7 @@
 
 
 <script>
+import TitleComponent from './TitleComponent.vue'
 import { mdiArmFlex } from '@mdi/js';
 import { mdiLanguageHtml5 } from '@mdi/js';
 import { mdiLanguageCss3 } from '@mdi/js';
@@ -81,6 +77,7 @@ export default {
   data() {
     return {
       icon: mdiArmFlex,
+      title: 'Skills',
       skills: [ 
         {
           name: 'HTML',
@@ -129,6 +126,9 @@ export default {
         }
       ]
     }
+  },
+  components: {
+    TitleComponent
   }
 }
 </script>

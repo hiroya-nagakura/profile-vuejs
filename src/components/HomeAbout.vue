@@ -1,15 +1,9 @@
 <template>
     <section class="home-about">
-      <div class="section__title">
-        
-        <div class="section__title-text">
-          <v-icon 
-            large
-            class='section__title-icon'
-          >{{ icon }}</v-icon>
-          About Me
-          </div>
-      </div>
+      <TitleComponent
+        :icon='icon'
+        :title='title'
+      />
       <v-container>
         <v-row class="home-about__contents fade-in">
           <v-col md="9" class="home-about__contents-text">
@@ -25,12 +19,14 @@
 </template>
 
 <script>
+import TitleComponent from './TitleComponent.vue'
 import { mdiHumanGreeting } from '@mdi/js';
 
 export default {
   data() {
     return {
-      icon: mdiHumanGreeting
+      icon: mdiHumanGreeting,
+      title: 'About me'
     }
   },
   computed: {
@@ -40,6 +36,9 @@ export default {
       const targetdate = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
       return  (Math.floor((targetdate - myBirtyday) / 10000));
     }
+  },
+  components: {
+    TitleComponent
   }
 }
 </script>

@@ -2,15 +2,10 @@
   <div
   class='ma-5'
   >
-    <div class="section__title">
-      <div class="section__title-text">
-        <v-icon 
-          large
-          class='section__title-icon'
-        >{{ icon }}</v-icon>
-        Contact
-      </div>
-    </div>
+    <TitleComponent
+      :icon='icon'
+      :title='title'
+    />
     <v-card
       class='fade-in'
     >
@@ -61,6 +56,7 @@
 </template>
 
 <script>
+  import TitleComponent from './TitleComponent.vue'
   import { functions } from '@/plugins/firebase';
   import { mdiEmail } from '@mdi/js';
 
@@ -68,6 +64,7 @@
     data() {
       return {
         icon: mdiEmail,
+        title: 'Contact',
         contactForm: {
           name: '',
           contents: '',
@@ -86,6 +83,9 @@
           message: ''
         }
       }
+    },
+    components: {
+      TitleComponent
     },
     methods: {
       sendMail: function () {

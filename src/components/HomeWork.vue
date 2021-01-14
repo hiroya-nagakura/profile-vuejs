@@ -1,14 +1,9 @@
 <template>
   <section class="home-about">
-    <div class="section__title">
-      <div class="section__title-text">
-        <v-icon 
-          large
-          class='section__title-icon'
-        >{{ icon }}</v-icon>
-        Work
-      </div>
-    </div>
+    <TitleComponent
+      :icon='icon'
+      :title='title'
+    />
     <v-container
     class='fade-in'
     >
@@ -68,12 +63,14 @@
 </template>
 
 <script>
+import TitleComponent from './TitleComponent.vue'
 import { mdiBriefcase } from '@mdi/js';
 
 export default {
   data() {
     return {
       icon: mdiBriefcase,
+      title: 'Work',
       portfolios: [
         {
           title: 'FitMenu',
@@ -93,6 +90,9 @@ export default {
         }
       ]
     }
+  },
+  components: {
+    TitleComponent
   }
 }
 </script>
