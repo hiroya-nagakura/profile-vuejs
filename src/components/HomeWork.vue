@@ -1,9 +1,12 @@
 <template>
   <section class="home-about">
-    <div class="section__title">
-      <div class="section__title-text">Work</div>
-    </div>
-    <v-container>
+    <TitleComponent
+      :icon='icon'
+      :title='title'
+    />
+    <v-container
+    class='fade-in'
+    >
       <v-row>
         <v-col
           v-for="(portfolio, index) in portfolios"
@@ -32,6 +35,7 @@
             </v-card-text>
             <v-divider class="mx-4"></v-divider>
             <v-card-actions>
+              link :
               <v-btn 
                 color="primary"
                 v-if=portfolio.siteUrl
@@ -59,9 +63,14 @@
 </template>
 
 <script>
+import TitleComponent from './TitleComponent.vue'
+import { mdiBriefcase } from '@mdi/js';
+
 export default {
   data() {
     return {
+      icon: mdiBriefcase,
+      title: 'Work',
       portfolios: [
         {
           title: 'FitMenu',
@@ -76,10 +85,14 @@ export default {
           img: require('../assets/img/profile.jpg'),
           technology: 'Vue, Vuetify',
           body: '現在閲覧されている本サイトです。バックエンドの言語だけでなく、フロントエンドの技術も学ぼうとVue学習の第一歩に作成しました。',
+          siteUrl: 'https://hiroya-nagakura.firebaseapp.com/',
           githubUrl: 'https://github.com/hiroya-nagakura/profile-vuejs'
         }
       ]
     }
+  },
+  components: {
+    TitleComponent
   }
 }
 </script>

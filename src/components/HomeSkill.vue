@@ -1,13 +1,16 @@
 <template>
   <div>
-    <div class="section__title">
-      <div class="section__title-text">Skills</div>
-    </div>
-    <v-container>
+    <TitleComponent
+      :icon='icon'
+      :title='title'
+    />
+    <v-container
+      class='fade-in'
+    >
       <v-row>
         <v-col
           cols='12'
-          md='6' sm='10'
+          md='8' sm='10'
           class='mx-auto'
         >
           <v-card>
@@ -20,6 +23,7 @@
                   class='text-right mr-5 text-h5 font-weight-black'
                 >Learning level</v-list-item-title>
               </v-list-item>
+              <v-divider class="mx-4"></v-divider>
             </v-list>
             <v-list
               v-for="(skill, index) in skills"
@@ -34,13 +38,13 @@
                   class='font-weight-medium ml-3'
                 ></v-list-item-title>
                 <v-list-item-subtitle
-                  class='text-right'
+                  class='text-right mr-md-5'
                 >
                   <v-rating
                     v-model="skill.rating"
                     background-color="gray lighten-2"
                     color="blue"
-                    size="20"
+                    dense
                     readonly
                     half-increments
                   ></v-rating>
@@ -57,6 +61,8 @@
 
 
 <script>
+import TitleComponent from './TitleComponent.vue'
+import { mdiArmFlex } from '@mdi/js';
 import { mdiLanguageHtml5 } from '@mdi/js';
 import { mdiLanguageCss3 } from '@mdi/js';
 import { mdiLanguageJavascript } from '@mdi/js';
@@ -70,6 +76,8 @@ import { mdiGit } from '@mdi/js';
 export default {
   data() {
     return {
+      icon: mdiArmFlex,
+      title: 'Skills',
       skills: [ 
         {
           name: 'HTML',
@@ -118,6 +126,9 @@ export default {
         }
       ]
     }
+  },
+  components: {
+    TitleComponent
   }
 }
 </script>
