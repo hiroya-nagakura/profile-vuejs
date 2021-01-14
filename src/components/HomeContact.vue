@@ -1,10 +1,20 @@
 <template>
-  <div>
-    <v-card>
+  <div
+  class='ma-5'
+  >
+    <div class="section__title">
+      <div class="section__title-text">
+        <v-icon 
+          large
+          class='section__title-icon'
+        >{{ icon }}</v-icon>
+        Contact
+      </div>
+    </div>
+    <v-card
+      class='fade-in'
+    >
       <v-container>
-        <div class="section__title">
-          <div class="section__title-text">Contact</div>
-        </div>
         <v-form ref="form" v-model="contactFormValidation.valid" lazy-validation>
           <v-text-field
             v-model="contactForm.name"
@@ -51,28 +61,32 @@
 </template>
 
 <script>
-  import { functions } from '@/plugins/firebase'
+  import { functions } from '@/plugins/firebase';
+  import { mdiEmail } from '@mdi/js';
 
   export default {
-    data: () => ({
-      contactForm: {
-        name: '',
-        contents: '',
-        email: '',
-        loading: false
-      },
-      contactFormValidation: {
-        valid: false,
-        nameRules: [v => !!v || '名前は必須項目です'],
-        emailRules: [v => !!v || 'メールアドレスは必須項目です'],
-        contentsRules: [v => !!v || '内容は必須項目です']
-      },
-      snackBar: {
-        show: false,
-        color: '',
-        message: ''
+    data() {
+      return {
+        icon: mdiEmail,
+        contactForm: {
+          name: '',
+          contents: '',
+          email: '',
+          loading: false
+        },
+        contactFormValidation: {
+          valid: false,
+          nameRules: [v => !!v || '名前は必須項目です'],
+          emailRules: [v => !!v || 'メールアドレスは必須項目です'],
+          contentsRules: [v => !!v || '内容は必須項目です']
+        },
+        snackBar: {
+          show: false,
+          color: '',
+          message: ''
+        }
       }
-    }),
+    },
     methods: {
       sendMail: function () {
         if (this.$refs.form.validate()) {

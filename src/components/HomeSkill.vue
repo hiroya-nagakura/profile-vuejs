@@ -9,11 +9,13 @@
         Skills
         </div>
     </div>
-    <v-container>
+    <v-container
+      class='fade-in'
+    >
       <v-row>
         <v-col
           cols='12'
-          md='6' sm='10'
+          md='8' sm='10'
           class='mx-auto'
         >
           <v-card>
@@ -41,13 +43,13 @@
                   class='font-weight-medium ml-3'
                 ></v-list-item-title>
                 <v-list-item-subtitle
-                  class='text-right'
+                  class='text-right mr-md-5'
                 >
                   <v-rating
                     v-model="skill.rating"
                     background-color="gray lighten-2"
                     color="blue"
-                    size="20"
+                    dense
                     readonly
                     half-increments
                   ></v-rating>
