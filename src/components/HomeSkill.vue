@@ -1,7 +1,13 @@
 <template>
   <div>
     <div class="section__title">
-      <div class="section__title-text">Skills</div>
+      <div class="section__title-text">
+        <v-icon 
+          large
+          class='section__title-icon'
+        >{{ icon }}</v-icon>
+        Skills
+        </div>
     </div>
     <v-container>
       <v-row>
@@ -20,6 +26,7 @@
                   class='text-right mr-5 text-h5 font-weight-black'
                 >Learning level</v-list-item-title>
               </v-list-item>
+              <v-divider class="mx-4"></v-divider>
             </v-list>
             <v-list
               v-for="(skill, index) in skills"
@@ -57,6 +64,7 @@
 
 
 <script>
+import { mdiArmFlex } from '@mdi/js';
 import { mdiLanguageHtml5 } from '@mdi/js';
 import { mdiLanguageCss3 } from '@mdi/js';
 import { mdiLanguageJavascript } from '@mdi/js';
@@ -70,6 +78,7 @@ import { mdiGit } from '@mdi/js';
 export default {
   data() {
     return {
+      icon: mdiArmFlex,
       skills: [ 
         {
           name: 'HTML',
