@@ -1,24 +1,5 @@
-# profile-vuejs
+# profile-NagakuraHiroya's Portfolio
+![profile](https://user-images.githubusercontent.com/66972481/104795467-e70c2600-57f1-11eb-8964-0c6eff80a281.jpg)
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Vue.js学習用に作成したポートフォリオです。
+UIフレームワークにVuetify、ホスティングにFirebaseを利用しました。
